@@ -1,4 +1,6 @@
 @import '_variables.css';
+@import '_keyboard.css';
+@import '_wordle.css';
 
 body {
   background-color: var(--bg-primary);
