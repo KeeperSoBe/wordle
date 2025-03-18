@@ -1,0 +1,11 @@
+:root {
+  --bg-primary: #1e1e1e;
+  --bg-filled: #898989;
+  --bg-invalid-letter: #3e3e3e;
+  --bg-valid-letter: #9f9f4d;
+  --bg-valid-placement: #4a9d4a;
+  --keyboard-width: 500px;
+  --keyboard-bg: #808384;
+  --keyboard-active-bg: #484a4b;
+  --keyboard-color: #808384;
+}
