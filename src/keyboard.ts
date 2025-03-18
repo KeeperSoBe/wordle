@@ -72,7 +72,7 @@ export class Keyboard {
     handleKeydownEvent: (event: KeyboardEvent) => void,
   ): void {
     if (this.container) {
-      console.error('[Keyboard](init): Wordle element already exists!');
+      console.error('[Keyboard](init): Keyboard element already exists!');
     } else {
       this.handleKeyboardClickEvent = handleKeyboardClickEvent;
       this.handleKeydownEvent = handleKeydownEvent;
@@ -94,7 +94,7 @@ export class Keyboard {
       document.removeEventListener('keydown', this.handleKeydownEvent);
       this.container = null;
     } else {
-      console.error('[Keyboard](destroy): Wordle element does not exist!');
+      console.error('[Keyboard](destroy): Keyboard element does not exist!');
     }
   }
 
