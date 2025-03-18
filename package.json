@@ -3,12 +3,31 @@
   "version": "0.0.0",
   "main": "public/index.js",
   "scripts": {
-    "build": "npx tsc"
+    "prebuild": "rimraf ./public/index.js",
+    "build": "cross-env TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack",
+    "lint": "npx eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "prepare": "husky"
   },
   "author": "James Gardiner",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "typescript": "^5.8.2"
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@eslint/js": "^9.22.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.22.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3",
+    "rimraf": "^6.0.1",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.1",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
   }
 }

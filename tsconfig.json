@@ -1,26 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es2015",
-    "module": "amd",
-    "outFile": "./public/index.js",
-    "rootDir": "./src",
-    "baseUrl": "./src",
-    "removeComments": true,
-    "strict": true,
+    "outDir": "./public/",
     "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictBindCallApply": true,
-    "strictPropertyInitialization": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-  },
-    "exclude": ["node_modules", "wordle-ol"]
+    "module": "es6",
+    "target": "es5",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
+  }
 }
