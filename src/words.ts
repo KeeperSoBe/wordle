@@ -1,6 +1,7 @@
 /**
  * List of all available words.
  *
+ * @export
  * @type { string[] }
  */
 export const words: string[] = [
