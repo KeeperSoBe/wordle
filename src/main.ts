@@ -1,3 +1,4 @@
+import { CreateConfetti } from './confetti';
 import { Keyboard } from './keyboard';
 import { UI } from './ui';
 import { words } from './words';
@@ -10,63 +11,47 @@ import { words } from './words';
 const guessLimit: number = 6;
 
 /**
- * Stores all of the guesses
+ * Stores all of the guesses.
  *
  * @type { string[] }
  */
 const guesses: string[] = [];
 
 /**
- * The currently untested guess
+ * The currently untested guess.
  *
  * @type { string }
  */
 let currentGuess: string = '';
 
 /**
- * The target word, chosen randomly from the test words array
+ * The target word, chosen randomly from the test words array.
  *
  * @type { string }
  */
 const word: string = words[Math.floor(Math.random() * words.length)];
 
 /**
- * Checks if the maximum number of guesses has been made yet, and returns the result.
+ * If the game has finished.
  *
- * @return { boolean }
+ * @type { boolean }
  */
-function isAtGuessLimit(): boolean {
-  return word === currentGuess || guesses.length === guessLimit;
-}
+let gameOver: boolean = false;
 
 /**
- * Handles click events for the keyboard buttons
- *
- * @param { string } key
- * @return { void }
- */
-function handleKeyboardClickEvent(key: string): void {
-  if (isAtGuessLimit()) {
-    return;
-  }
-
-  handleInput(key);
-}
-
-/**
- * Handles keydown events on the document
+ * Handles keydown events on the document.
  *
  * @param { KeyboardEvent } event
  * @return { void }
  */
 function handleKeydownEvent(event: KeyboardEvent): void {
-  if (isAtGuessLimit()) {
+  if (guesses.length === guessLimit) {
     return;
   }
 
   const key = event.key.toLowerCase();
 
-  // // Ignore key presses that are not expected
+  // // Ignore key presses that are not expected.
   if (!Keyboard.isValidKey(key)) {
     return;
   }
@@ -74,8 +59,14 @@ function handleKeydownEvent(event: KeyboardEvent): void {
   handleInput(key);
 }
 
+/**
+ * Handles input from the virtual keyboard or document keyboard events.
+ *
+ * @param { string } key
+ * @return { void }
+ */
 function handleInput(key: string): void {
-  if (isAtGuessLimit()) {
+  if (guesses.length === guessLimit || gameOver) {
     return;
   }
 
@@ -98,6 +89,11 @@ function handleInput(key: string): void {
   }
 }
 
+/**
+ * Deletes the last character from the pending current guess, if there is one.
+ *
+ * @return { void }
+ */
 function handleBackspaceInput(): void {
   if (currentGuess.length > 0) {
     UI.deleteColumn(guesses.length, currentGuess.length - 1);
@@ -107,7 +103,9 @@ function handleBackspaceInput(): void {
 }
 
 /**
- * Makes a guess using the currentWord, reveals correctly placed and valid letters
+ * Makes a guess using the currentWord, reveals correctly placed and valid letters.
+ *
+ * @return { void }
  */
 function guess(): void {
   for (let index = 0; index < currentGuess.length; index++) {
@@ -138,6 +136,9 @@ function guess(): void {
 
   if (word !== currentGuess) {
     currentGuess = '';
+  } else {
+    gameOver = true;
+    CreateConfetti();
   }
 }
 
