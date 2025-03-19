@@ -63,14 +63,15 @@ export class UI {
    * Sets up the Wordle UI.
    *
    * @static
+   * @param { number } [guessLimit=6]
    * @memberof UI
    */
-  public static init(): void {
+  public static init(guessLimit: number = 6): void {
     if (this.container) {
       console.error('[UI](init): Wordle element already exists!');
     } else {
       this.container = document.body.appendChild(
-        this.createWordleContainerElement(),
+        this.createWordleContainerElement(guessLimit),
       );
     }
   }
@@ -162,13 +163,13 @@ export class UI {
    * Creates the Wordle container element and builds out its rows and columns.
    *
    * @static
-   * @param { number } [rows=5]
+   * @param { number } [rows=6]
    * @param { number } [cols=5]
    * @return { HTMLDivElement }
    * @memberof UI
    */
   private static createWordleContainerElement(
-    rows: number = 5,
+    rows: number = 6,
     cols: number = 5,
   ): HTMLDivElement {
     if (this.container) {

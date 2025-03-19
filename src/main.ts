@@ -2,7 +2,12 @@ import { Keyboard } from './keyboard';
 import { UI } from './ui';
 import { words } from './words';
 
-const guessLimit = 5;
+/**
+ * The number of guesses the player gets each game.
+ *
+ * @type { number }
+ */
+const guessLimit: number = 6;
 
 /**
  * Stores all of the guesses
@@ -137,5 +142,5 @@ function guess(): void {
 }
 
 // Initialise the UI and virtual Keyboard.
-UI.init();
-Keyboard.init(handleKeyboardClickEvent, handleKeydownEvent);
+UI.init(guessLimit);
+Keyboard.init(handleInput, handleKeydownEvent);
