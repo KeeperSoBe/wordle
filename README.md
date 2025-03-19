@@ -14,18 +14,10 @@
   <p align="center">
     A cheap and cheerful Wordle clone, with zero dependencies.
     <br />
-    <a href="https://github.com/KeeperSoBe/wordle"><strong>Explore the docs »</strong></a>
     <br />
-    <br />
-    <a href="https://github.com/KeeperSoBe/wordle">View Demo</a>
-    ·
-    <a href="https://github.com/KeeperSoBe/wordle/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/KeeperSoBe/wordle/issues">Request Feature</a>
+
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -49,9 +41,8 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 A cheap and cheerful Wordle clone, with zero dependencies
@@ -60,17 +51,14 @@ Boredom breeds creation.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 ### Built With
 
-* [TypeScript](https://www.typescriptlang.org/)
+[![Typescript][Typescript.org]][Typescript-url]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
@@ -85,6 +73,7 @@ To get a local copy up and running follow these simple example steps.
 ### Installation
 
 1. Clone the repo
+
    ```sh
    git clone https://github.com/KeeperSoBe/wordle.git
    ```
@@ -96,19 +85,24 @@ To get a local copy up and running follow these simple example steps.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- USAGE EXAMPLES -->
+
 ## Usage
 
 Open the [public.html](./public/index.html) in your browser of choice and get guessing.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
 <!-- ACKNOWLEDGMENTS -->
+
 ## Acknowledgments
 
-* [The Original Wordle](https://www.nytimes.com/games/wordle/index.html)
+- [The Original Wordle](https://www.nytimes.com/games/wordle/index.html)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[Typescript.org]: https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white
+[Typescript-url]: https://www.typescriptlang.org/
