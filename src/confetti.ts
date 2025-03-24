@@ -42,22 +42,18 @@ const defaultConfettiConfig = {
 };
 
 class Confetti {
-  public readonly speed: Position;
-  public readonly radius: Position;
-  public readonly position: Position;
-  public readonly initialPosition: Position;
-  public readonly initialRadius: number;
-  public readonly finalSpeedX: number;
-
-  public readonly dragCoefficient: number;
-  public readonly rotationSpeed: number;
-  public readonly rotationAngle: number;
-  public readonly radiusYDirection: string;
-  public readonly absCos: number;
-  public readonly absSin: number;
-  public readonly color: string;
-  public readonly createdAt: number;
-  public readonly direction: Direction;
+  private readonly speed: Position;
+  private readonly radius: Position;
+  private readonly position: Position;
+  private readonly initialPosition: Position;
+  private readonly finalSpeedX: number;
+  private readonly dragCoefficient: number;
+  private readonly rotationAngle: number;
+  private readonly absCos: number;
+  private readonly absSin: number;
+  private readonly color: string;
+  private readonly createdAt: number;
+  private readonly direction: Direction;
 
   public constructor({
     initialPosition,
@@ -74,16 +70,12 @@ class Confetti {
       Utils.getRandomInRange(0.9, 1.7, 3) * Utils.getScaleFactor();
     this.speed = { x: speedFactor, y: speedFactor };
     this.finalSpeedX = Utils.getRandomInRange(0.2, 0.6, 3);
-    this.rotationSpeed =
-      Utils.getRandomInRange(0.03, 0.07, 3) * Utils.getScaleFactor();
     this.dragCoefficient = Utils.getRandomInRange(0.0005, 0.0009, 6);
     this.radius = { x: radius, y: radius };
-    this.initialRadius = radius;
     this.rotationAngle =
       direction === 'left'
         ? Utils.getRandomInRange(0, 0.2, 3)
         : Utils.getRandomInRange(-0.2, 0, 3);
-    this.radiusYDirection = 'down';
 
     const angle =
       direction === 'left'
